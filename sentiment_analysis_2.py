@@ -71,16 +71,3 @@ model.save_weights("fer1.h5")
 # 4 - positive
 # =============================================================================
 
-# =============================================================================
-# model = Sequential()
-# model.add(Embedding(X.shape[0], 128 ,input_length = X.shape[1]))
-# model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2,return_sequences=True))
-# model.add(SpatialDropout1D(0.2))
-# model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2,return_sequences=True))
-# model.add(SpatialDropout1D(0.2))
-# model.add(Flatten())
-# model.add(Dense(5,activation='softmax'))
-# model.compile(loss = 'categorical_crossentropy', optimizer='adam',metrics = ['accuracy'])
-# print(model.summary())
-# =============================================================================
-
