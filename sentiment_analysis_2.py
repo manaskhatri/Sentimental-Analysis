@@ -24,7 +24,6 @@ model.add(Embedding(vocab_size, embed_dim ,input_length = X.shape[1]))
 model.add(LSTM(32, dropout=0.2, input_shape=(X.shape[1],64),recurrent_dropout=0.2,return_sequences=True))
 model.add(LSTM(32, dropout=0.2, recurrent_dropout=0.2,return_sequences=True))
 model.add(LSTM(32, dropout=0.2, recurrent_dropout=0.2))
-model.add(Dense(units=16,input_shape=(60,32)))
 model.add(Dense(5,activation='softmax'))
 model.compile(loss = 'categorical_crossentropy', optimizer='adam',metrics = ['accuracy'])
 print(model.summary())
@@ -50,7 +49,7 @@ score,acc = model.evaluate(X_test, Y_test, verbose = 2, batch_size = batch_size)
 print("score: %.2f" % (score))
 print("acc: %.2f" % (acc))
 
-twt = ['This is not exceptable by the people.']
+twt = ['This Movie is too bad to watch.']
 twt = tokenizer.texts_to_sequences(twt)
 twt = pad_sequences(twt, maxlen=60, dtype='int32',padding='post',truncating='post', value=0)
 print(twt)
